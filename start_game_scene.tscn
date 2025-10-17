@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://7s78tchm5gp0"]
+
+[node name="StartGameScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.049479168
+anchor_top = 0.094135806
+anchor_right = 0.4078334
+anchor_bottom = 0.14932099
+offset_right = 0.17593384
+offset_bottom = 0.23999786
+theme_override_font_sizes/font_size = 26
+text = "Great minds dominate the game."
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.066840276
+anchor_top = 0.29166666
+anchor_right = 0.23725694
+anchor_bottom = 0.55737036
+offset_right = -0.3199997
+offset_bottom = -0.1760025
+metadata/_edit_use_anchors_ = true

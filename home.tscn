@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dv03qx1usypc6"]
 
-[ext_resource type="Script" uid="uid://c7gqtvuexyj5j" path="res://home.gd" id="1_tt30a"]
+[ext_resource type="Script" uid="uid://c7gqtvuexyj5j" path="res://home_scene.gd" id="1_tt30a"]
 
-[node name="Home" type="Control"]
+[node name="HomeScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,38 +13,45 @@ script = ExtResource("1_tt30a")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -98.5
-offset_right = 98.5
-offset_bottom = 51.0
+anchors_preset = -1
+anchor_left = 0.055927116
+anchor_top = 0.21604939
+anchor_right = 0.2279271
+anchor_bottom = 0.29504937
+offset_left = 0.57196045
+offset_right = -0.5720215
+offset_bottom = -0.19200134
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
 text = "Battle Quiz"
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -142.0
-offset_top = -64.0
-offset_right = 142.0
-offset_bottom = 64.0
+anchors_preset = -1
+anchor_left = 0.052347235
+anchor_top = 0.4272346
+anchor_right = 0.29834726
+anchor_bottom = 0.6252346
+offset_left = -0.3040161
+offset_top = 0.15197754
+offset_right = 0.30395508
+offset_bottom = -0.15203857
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
+metadata/_edit_use_anchors_ = true
 
 [node name="StartGame" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "Start Game"
 alignment = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="ExitToDesktop" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "Exit To Desktop"
 alignment = 0
 metadata/_edit_use_anchors_ = true
@@ -56,5 +63,17 @@ ok_button_text = "Yes"
 dialog_text = "Are you sure you want to exit game?"
 cancel_button_text = "No"
 
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a Quiz File"
+file_mode = 0
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.json")
+use_native_dialog = true
+
+[node name="ConfirmOpenFile" type="AcceptDialog" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitToDesktop" to="." method="_on_exit_to_desktop_pressed"]
 [connection signal="confirmed" from="ConfirmExit" to="." method="_on_confirm_exit_confirmed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
