@@ -49,3 +49,18 @@ text = "Select Quiz"
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Main Menu"
+
+[node name="OpenQuizFileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+file_mode = 0
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.json")
+use_native_dialog = true
+
+[node name="ConfirmOpenQuiz" type="AcceptDialog" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/NewQuiz" to="." method="_on_new_quiz_pressed"]
+[connection signal="pressed" from="VBoxContainer/SelectQuiz" to="." method="_on_select_quiz_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="file_selected" from="OpenQuizFileDialog" to="." method="_on_open_quiz_file_dialog_file_selected"]

@@ -63,17 +63,6 @@ ok_button_text = "Yes"
 dialog_text = "Are you sure you want to exit game?"
 cancel_button_text = "No"
 
-[node name="FileDialog" type="FileDialog" parent="."]
-title = "Open a Quiz File"
-file_mode = 0
-display_mode = 1
-access = 2
-filters = PackedStringArray("*.json")
-use_native_dialog = true
-
-[node name="ConfirmOpenFile" type="AcceptDialog" parent="."]
-
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitToDesktop" to="." method="_on_exit_to_desktop_pressed"]
 [connection signal="confirmed" from="ConfirmExit" to="." method="_on_confirm_exit_confirmed"]
-[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
