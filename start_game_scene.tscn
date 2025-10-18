@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://7s78tchm5gp0"]
+[gd_scene load_steps=2 format=3 uid="uid://7s78tchm5gp0"]
+
+[ext_resource type="Script" uid="uid://p5d7e1h6fcxo" path="res://start_game_scene.gd" id="1_ofol1"]
 
 [node name="StartGameScene" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ofol1")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -31,3 +34,18 @@ anchor_bottom = 0.55737036
 offset_right = -0.3199997
 offset_bottom = -0.1760025
 metadata/_edit_use_anchors_ = true
+
+[node name="NewQuiz" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "New Quiz"
+
+[node name="SelectQuiz" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Select Quiz"
+
+[node name="MainMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Main Menu"
