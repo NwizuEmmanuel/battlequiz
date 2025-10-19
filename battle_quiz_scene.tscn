@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsv3rdg0jq6jo"]
+
+[ext_resource type="Script" uid="uid://cxfajqvtd8bhq" path="res://battle_quiz_scene.gd" id="1_r0t77"]
+
+[node name="BattleQuizScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r0t77")
+
+[node name="Question" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3628472
+anchor_top = 0.20524691
+anchor_right = 0.6298472
+anchor_bottom = 0.27327162
+offset_right = 0.4159851
+offset_bottom = -0.08000183
+theme_override_font_sizes/font_size = 26
+text = "Question here"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37239584
+anchor_top = 0.4212963
+anchor_right = 0.63415974
+anchor_bottom = 0.8332222
+offset_right = 0.44799805
+offset_bottom = 0.07199097
+metadata/_edit_use_anchors_ = true
+
+[node name="A" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "A"
+
+[node name="B" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "B"
+
+[node name="C" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "C"
+
+[node name="D" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "D"
+
+[node name="BossHp" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1267361
+anchor_top = 0.032407407
+anchor_right = 0.41973612
+anchor_bottom = 0.08940741
+offset_right = 0.46398926
+offset_bottom = 0.063999176
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerHp" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5685764
+anchor_top = 0.030864198
+anchor_right = 0.8615764
+anchor_bottom = 0.0878642
+offset_right = 0.46398926
+offset_bottom = 0.063999176
+metadata/_edit_use_anchors_ = true
+
+[node name="Boss" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032118056
+anchor_top = 0.030864198
+anchor_right = 0.0975
+anchor_bottom = 0.09518518
+offset_right = -0.3199997
+offset_bottom = 0.3199997
+theme_override_font_sizes/font_size = 20
+text = "Boss"
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8984375
+anchor_top = 0.032407407
+anchor_right = 0.9603472
+anchor_bottom = 0.08901235
+offset_right = -0.3199997
+offset_bottom = 0.3199997
+theme_override_font_sizes/font_size = 20
+text = "Player"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

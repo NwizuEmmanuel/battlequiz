@@ -1,8 +1,11 @@
 extends Control
 
 @onready var quiz_list: ItemList = $ItemList
+@onready var confirm_dialog: ConfirmationDialog = $ConfirmDialog
 
 const QUIZ_FOLDER := "user://quizzes/"
+var selected_quiz_file := ""
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Ensure the folder exists
@@ -36,5 +39,17 @@ func _process(_delta: float) -> void:
 
 
 func _on_item_list_item_selected(index: int) -> void:
-	var full_file_name = quiz_list.get_item_metadata(index)
-	print("Selected quiz file:", full_file_name)
+	selected_quiz_file = quiz_list.get_item_metadata(index)
+	confirm_dialog.dialog_text = "Start Battle Quiz: '%s'?" % quiz_list.get_item_text(index)
+	confirm_dialog.popup_centered()
+
+
+func _on_confirm_dialog_confirmed() -> void:
+	if selected_quiz_file != "":
+		var quiz_path = QUIZ_FOLDER + selected_quiz_file
+		
+		# Load next scene and pass the selected quiz file path
+		var battle_scene = preload("res://battle_quiz_scene.tscn").instantiate()
+		battle_scene.quiz_file = quiz_path
+		get_tree().change_scene_to_packed(preload("res://battle_quiz_scene.tscn"))
+		

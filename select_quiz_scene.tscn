@@ -17,7 +17,7 @@ anchors_preset = -1
 anchor_left = 0.038194444
 anchor_top = 0.052469134
 anchor_right = 0.27884027
-anchor_bottom = 0.13320988
+anchor_bottom = 0.11469137
 offset_right = -0.22401428
 offset_bottom = -0.3200035
 theme_override_font_sizes/font_size = 26
@@ -27,14 +27,17 @@ metadata/_edit_use_anchors_ = true
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.03726389
-anchor_top = 0.1264568
-anchor_right = 0.60843056
-anchor_bottom = 0.964889
+anchor_left = 0.02945139
+anchor_top = 0.13880247
+anchor_right = 0.60061806
+anchor_bottom = 0.97723466
 offset_left = 0.071998596
 offset_top = 0.055999756
 offset_right = 0.08798218
 offset_bottom = -0.24801636
 metadata/_edit_use_anchors_ = true
 
+[node name="ConfirmDialog" type="ConfirmationDialog" parent="."]
+
 [connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="confirmed" from="ConfirmDialog" to="." method="_on_confirm_dialog_confirmed"]
