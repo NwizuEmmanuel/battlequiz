@@ -11,24 +11,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r0t77")
 
-[node name="Question" type="Label" parent="."]
+[node name="QuestionLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3628472
+anchor_left = 0.10329861
 anchor_top = 0.20524691
-anchor_right = 0.6298472
+anchor_right = 0.91630554
 anchor_bottom = 0.27327162
 offset_right = 0.4159851
 offset_bottom = -0.08000183
 theme_override_font_sizes/font_size = 26
 text = "Question here"
 horizontal_alignment = 1
+autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="TimerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4453125
+anchor_top = 0.038580246
+anchor_right = 0.54628474
+anchor_bottom = 0.08746914
+offset_right = -0.3199997
+offset_bottom = 0.3199997
+theme_override_font_sizes/font_size = 20
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -83,7 +91,7 @@ offset_right = 0.46398926
 offset_bottom = 0.063999176
 metadata/_edit_use_anchors_ = true
 
-[node name="Boss" type="Label" parent="."]
+[node name="BossLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.032118056
@@ -96,7 +104,7 @@ theme_override_font_sizes/font_size = 20
 text = "Boss"
 metadata/_edit_use_anchors_ = true
 
-[node name="Player" type="Label" parent="."]
+[node name="PlayerLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.8984375

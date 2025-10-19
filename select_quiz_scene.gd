@@ -51,5 +51,7 @@ func _on_confirm_dialog_confirmed() -> void:
 		# Load next scene and pass the selected quiz file path
 		var battle_scene = preload("res://battle_quiz_scene.tscn").instantiate()
 		battle_scene.quiz_file = quiz_path
-		get_tree().change_scene_to_packed(preload("res://battle_quiz_scene.tscn"))
-		
+		# Replace the current scene with the new one
+		get_tree().current_scene.queue_free()
+		get_tree().root.add_child(battle_scene)
+		get_tree().current_scene = battle_scene		
